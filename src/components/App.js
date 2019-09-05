@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import Header from "./Header";
 import Inventory from "./Inventory";
 import Order from "./Order";
@@ -10,6 +11,10 @@ class App extends Component {
   state = {
     fishes: {},
     order: {}
+  };
+
+  static propTypes = {
+    match: PropTypes.object
   };
 
   componentDidMount() {
@@ -48,6 +53,7 @@ class App extends Component {
     // Add the fish from arguments with a new key using the date
     fishes[`fish${Date.now()}`] = fish;
 
+    console.log(fishes);
     // Update fishes state
     this.setState({ fishes });
   };
