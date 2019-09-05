@@ -2,9 +2,16 @@ import React, { Component } from "react";
 
 class EditFishForm extends Component {
   handleOnChange = e => {
+    const name = e.currentTarget.name;
+
+    const value =
+      name === "price"
+        ? parseFloat(e.currentTarget.value)
+        : e.currentTarget.value;
+
     const modifiedfish = {
       ...this.props.fish,
-      [e.currentTarget.name]: e.currentTarget.value
+      [e.currentTarget.name]: value
     };
 
     this.props.editFish(this.props.index, modifiedfish);
