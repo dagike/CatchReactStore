@@ -1,6 +1,7 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-export default ({ tagline }) => (
+const Header = ({ tagline }) => (
   <header className="top">
     <h1>
       Catch
@@ -15,3 +16,9 @@ export default ({ tagline }) => (
     </h3>
   </header>
 );
+
+Header.propTypes = {
+  tagline: PropTypes.string.isRequired
+};
+
+export default Header;
